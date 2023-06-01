@@ -15,7 +15,7 @@
                 Console.WriteLine("3. Exit");
 
                 int option;
-                if (int.TryParse(Console.ReadLine(), out option))
+                if (!int.TryParse(Console.ReadLine(), out option))
                 {
                     Console.WriteLine("invalid input. Please enter a valid option");
                     continue;
@@ -25,7 +25,7 @@
                     case 1:
                         Console.WriteLine("enter the amount to deposit");
                         double amount;
-                        if(double.TryParse(Console.ReadLine(), out amount))
+                        if(!double.TryParse(Console.ReadLine(), out amount))
                         {
                             Console.WriteLine("invalid input. Please enter a valid amount");
                             continue;
@@ -37,7 +37,7 @@
 
 
                     case 2:
-                        Console.WriteLine($"Current balance: {account.GetBalance}");
+                        Console.WriteLine($"Current balance: {account.GetBalance()}");
                         break;
 
                     case 3:
